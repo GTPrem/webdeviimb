@@ -212,6 +212,23 @@
 
   </main>
 
+  <script>
+    const header = document.querySelector('.site-header');
+    const hero = document.querySelector('.hero');
+
+    function updateHeader() {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom <= 0) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+    }
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+  </script>
+
   <footer class="site-footer">
 
     <p class="footer-name">Lavanya Natya Gurukulam</p>
